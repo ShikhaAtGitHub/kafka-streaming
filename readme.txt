@@ -11,3 +11,12 @@ producer.py: responsible for producing/faking the data(the same data which we ha
 consumer.py: responsible for sequentially retrieving the data from the topic, this wrapped function in turn deserialises(from bytes to its original format) the data.
 Once the data is fetched from the topic, it loads the saved cnn model, converts the shape of the pulled data from the topic to its original format the feeds the data into our trained model to predicts the classes.
 
+USAGE:
+1) Dump the trained cnn model in joblib format.
+2) Install Zookeeper and kafka into your system using docker.
+3) Install kafka-python in your working directory.
+4) Create a topic('my_kafka_topic').
+5) Start zookeeper and kafka from Docker Desktop.
+6) Start running producer.py file by executing >>> python3 producer.py
+7) Start running consumer.py file by executing >>> python3 consumer.py
+8) You will see the model real-time prediction.
