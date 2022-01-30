@@ -17,5 +17,5 @@ for (x, y) in zip(test_images_x, test_labels_y):
     x_enc = msgpack.packb(x, default=m.encode)
     encoded_x = base64.encodebytes(x_enc)
     producer.send('my_kafka_topic', encoded_x)
-    print('Sent to topic encoded_x---------', encoded_x)
+    print('Sent to topic my_kafka_topic---------', encoded_x)
     time.sleep(2)
