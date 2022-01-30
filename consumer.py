@@ -1,7 +1,5 @@
 import os
 from kafka import KafkaConsumer
-import msgpack
-import msgpack_numpy as m
 import numpy as np
 import time
 from joblib import load
