@@ -19,9 +19,7 @@ consumer = KafkaConsumer(
 
 for message in consumer:
     x_return = np.frombuffer(message.value, dtype=np.uint8)
-    print('x_return shape', x_return.shape)
     if x_return.shape == (784,): # added to ignore the (1,) shape.
-        # x_rec = msgpack.unpackb(message.value, object_hook=m.decode)
         x_shaped = np.array(x_return).reshape(1,28,28)
         prediction = np.argmax(clf.predict(x_shaped), axis=-1)  # it uses a softmax last-layer activation
         print('prediction-----', prediction)
