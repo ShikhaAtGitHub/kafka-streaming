@@ -15,7 +15,7 @@ USAGE:
 1) Dump the trained cnn model in joblib format.
 2) Install Zookeeper and kafka into your system using docker.
 3) Install kafka-python in your working directory.
-4) Create a topic('my_kafka_topic').
+4) Create a topic('my_kafka_topic') >>> kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic my_kafka_topic
 5) Start zookeeper and kafka from Docker Desktop.
 6) Start running producer.py file by executing >>> python3 producer.py
 7) Start running consumer.py file by executing >>> python3 consumer.py
